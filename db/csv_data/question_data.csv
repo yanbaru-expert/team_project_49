@@ -1,0 +1,100 @@
+genre,title,content,answer
+ruby,Rubyの新バージョンをインストール,"GitHubからクローンしたアプリに `bundle install` を実行したところ，次のようなエラーが出ました。
+
+```
+rbenv: version `2.7.2' is not installed
+```
+
+Ruby2.7.2がインストールできていないようですが，どのようにすればインストールできますか。","`rbenv`を用いた Ruby のインストール手順を解説します。
+
+まずは，必要なアップデートを行いましょう。
+
+```zsh:ターミナル
+cd
+brew update
+brew upgrade rbenv ruby-build
+```
+
+次のコマンドでRubyの最新安定バージョンを確認できます。
+
+```zsh:ターミナル
+rbenv install -l | grep -v -
+```
+
+例えば，Ruby `2.7.2` をインストールする場合は次のような流れになります。
+
+```zsh:ターミナル
+rbenv install 2.7.2
+rbenv global 2.7.2
+gem install rails
+```
+
+注意すべきは，Rubyの各バージョンに対して使用するgemをインストールしなければならないことです。
+Ruby `2.6.6` で Rails をインストールしていたとしても，Ruby `2.7.2` に移行した場合は再度 `rails` をインストールする必要があります。
+
+他にも，例えば `VSCode` で使用している gem がありましたら，インストールしておく必要があります。
+
+```zsh:ターミナル
+gem install solargraph
+gem install htmlbeautifier
+gem install rufo
+```"
+ruby,"syntax error, unexpected end-of-input, expecting `end'","ターミナルから `ruby main.rb` を実行したところ次のエラーが発生しました。どうすれば解決できますか。
+
+```none:エラー内容
+ruby_task/task.rb:199: syntax error, unexpected end-of-input, expecting `end'
+```","英単語の意味を理解できていない場合は，まず翻訳して覚えていくことが重要です。
+
+- Google翻訳（https://translate.google.com/?sl=en&tl=ja&op=translate&hl=ja）
+- Google翻訳・拡張機能（https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb?hl=ja）
+- DeepL翻訳（https://www.deepl.com/translator）
+
+- `task.rb:199` は `task.rb` の199行目でエラーが発生したということ
+- `syntax error` は `文法エラー` （Rubyの書き方に間違いがある）
+- `unexpected end-of-input, expecting end` は `end` が足りていない
+
+ということを表しています。「199行目」の情報は今回のケースでは参考になりませんので，「end」が足りていないというエラー文に注目し，`do`, `def`, `class` に対応する `end` が抜けていないかどうかを確認してみて下さい。"
+rails,データベースの変更方法,アプリ作成時にデータベースを指定をしなかったため `SQLite3` を使用する設定になっているのですが，`Heroku` にデプロイをするため `PostgreSQL` に変更したいと思います。どうすればよいですか。,"次の2つのファイルを修正することで，Railsアプリのデータベースを変更できます。
+
+- Gemfile
+- config/database.yml
+
+ここでは，「開発・テスト・本番全ての環境」のデータベースを変更する前提で，手順を解説します。
+
+なお，各種設定はデフォルトのままですので，ユーザー名やパスワードを変更している場合や，AWSなどにデプロイする場合はさらなる修正が必要です。
+
+データベースを変更する前に，現在のデータベースを削除しておくことをお勧めします。
+
+```zsh:ターミナル
+rails db:drop
+```
+
+## `PostgreSQL` に変更する場合
+
+Rails 6 のアプリならば，以下のコマンドで変更できます。
+
+```zsh:ターミナル
+rails db:system:change --to=postgresql
+```
+
+このコマンドにより Gemfile の `gem 'sqlite3'` が `gem 'pg'` に変更され，`config/database.yml` の設定が `PostgreSQL` 用のものに修正されます。
+
+## `MySQL` に変更する場合
+
+Rails 6 のアプリならば，以下のコマンドで変更できます。
+
+```zsh:ターミナル
+rails db:system:change --to=mysql
+```"
+rails,サーバーを起動できない,"`rails s` を実行してサーバーを起動しようとしたところ，以下のエラーが発生して起動できません。
+どのようにすればよいでしょうか。
+
+```none:エラー内容
+Address already in use - bind(2) for ""127.0.0.1"" port 3000 (Errno::EADDRINUSE)
+```","すでにRailsサーバーを他のターミナルで起動しているときにこのエラーが発生します。サーバーを停止させて再度起動し直して下さい。
+
+もし，ターミナルを終了させてしまっていて停止できない場合は，次を実行してプロセスを強制終了させれば，サーバーを起動できるようになります。
+
+```zsh:ターミナル 
+kill -9 $(lsof -i tcp:3000 -t)
+```"
