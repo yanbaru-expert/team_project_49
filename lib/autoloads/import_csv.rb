@@ -15,10 +15,11 @@ class ImportCsv
 
   def self.text_data
     list = import('db/csv_data/text_data.csv')
-    Text.delete
+    Text.delete_all
 
     puts "テキスト教材インポート処理を開始"
     Text.create!(list)
     puts "テキスト教材のCSVデータインポート完了!!"
   end
+end
 
