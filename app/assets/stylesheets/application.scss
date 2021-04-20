@@ -2,4 +2,26 @@
  *= require_tree .
  *= require_self
  */
+
 @import "bootstrap/scss/bootstrap";
+/* 全体 */
+
+.base-container {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* max-width */
+
+.mw-md {
+  max-width: 720px;
+}
+
+.mw-lg {
+  max-width: 960px;
+}
+
+.mw-xl {
+  max-width: 1200px;
+}
+>>>>>>> 5e8026a61aef150c24017ff9d85d7aaa5f30d5ba:app/assets/stylesheets/application.css
