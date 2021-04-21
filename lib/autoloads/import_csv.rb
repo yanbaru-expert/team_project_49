@@ -18,4 +18,11 @@ class ImportCsv
     Text.create!(list)
     puts "インポート完了!!"
   end
+
+  def self.movie_data
+    list = import('db/csv_data/movie_data.csv')
+    puts "動画教材インポート処理を開始"
+    Movie.create!(list)
+    puts "インポート完了"
+  end
 end
