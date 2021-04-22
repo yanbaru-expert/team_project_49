@@ -1,0 +1,27 @@
+ja:
+  enums:
+    text:
+    movie:
+      genre:
+        code_name: "name"
+        basic: "Basic"
+        git: "Git"
+        ruby: "Ruby"
+        rails: "Ruby on Rails"
+        aws: "AWS"
+        html: "HTML&CSS"
+        js: "JavaScript"
+        ts: "TypeScript"
+        react: "React"
+        vue: "Vue"
+        angular: "Angular"
+        php: "PHP"
+        design_tool: "デザインツールの使い方"
+        design_matter: "実案件の取り方"
+        design_usage: "デザイナーのマーケティング戦略"
+        money_marketing: "マーケティング講座"
+        talk: "全ての勉強会"
+        money_lstep: "Lステップ講座"
+        money_insta: "インスタ講座"
+        live: "プログラミング勉強会"
+        invisible: "非表示"
