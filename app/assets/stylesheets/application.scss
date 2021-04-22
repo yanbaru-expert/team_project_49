@@ -14,7 +14,16 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   @extend .container-fluid;
   max-width: var(--breakpoint-lg);
   padding: 30px 15px;
-  
+}
+
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}
+
 .base-container {
   margin: 0 auto;
   padding: 1rem;
