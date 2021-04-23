@@ -1,28 +1,69 @@
-<h1><%= t('.sign_in') %></h1>
+    
+<div class="base-container mx-auto mt-5" style="width:500px;">
+  <h1 class = "text-center">ログイン</h1>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="form-group form-check">
-      <%= f.check_box :remember_me, class: 'form-check-input' %>
-      <%= f.label :remember_me, class: 'form-check-label' do %>
-        <%= resource.class.human_attribute_name('remember_me') %>
-      <% end %>
+  <form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="CvwZm56/1JeC2S9U0Iv+/OIay0CY34tUJYFgmBEVJ55Md2eTvnJnwY6MA0kWnLcRI60h49Gw2U2c+aROk6waqg==" />
+    <div class="form-group">
+      <label for="user_email">Eメール</label>
+      <input autofocus="autofocus" autocomplete="email" class="form-control" required="required" type="email" value="" name="user[email]" id="user_email" />
     </div>
-  <% end %>
 
-  <div class="form-group">
-    <%= f.submit  t('.sign_in'), class: 'btn btn-primary' %>
+    <div class="form-group">
+      <div class="d-flex">
+        <label for="user_password">パスワード</label>
+        <small class="ml-auto">
+          <a href="/users/password/new">パスワードの再設定はこちら</a>
+        </small>
+      </div>
+      <input autocomplete="current-password" class="form-control" minlength="6" type="password" name="user[password]" id="user_password" />
+    </div>
+
+    <div class="form-group form-check">
+      <input name="user[remember_me]" type="hidden" value="0" /><input class="form-check-input" type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
+      <label class="form-check-label" for="user_remember_me">
+        次回から自動的にログイン
+      </label>
+    </div>
+
+    <div class="form-group">
+      <input type="submit" name="commit" value="ログイン" class="btn btn-primary btn-block" data-disable-with="ログイン" />
+    </div>
+
+  </form>
+
+  <div class="card mt-5">
+    <h5 class="card-header">案内</h5>
+    <div class="card-body">
+      <p class="card-text">
+        アカウントの新規登録をまだ済まされていない方は，以下のリンクからお願いいたします。
+      </p>
+      <a class="btn btn-success btn-block" href="/users/sign_up">新規登録</a>
+    </div>
   </div>
-<% end %>
 
-<%= render 'devise/shared/links' %>
+  <div class="card my-5">
+    <h5 class="card-header">公開範囲について</h5>
+    <div class="card-body">
+      <p class="card-text">
+        こちらの教材は，やんばるエキスパート，やんばるCODEの会員の方のみの限定公開となっています。
+      </p>
+      <p class="card-text">
+        申し込みは以下のページよりお願いいたします。
+      </p>
+      <p><a href="https://yanbaru-expert.com/">やんばるエキスパート</a></p>
+      <p><a href="https://utina.yoshitokamizato.com/entry/2020/04/20/164421">やんばるCODE オフライン（月額プラン）</a></p>
+      <p><a href="https://utina.yoshitokamizato.com/entry/2020/05/19/103519">やんばるCODE オフライン（住み込みプラン）</a></p>
+    </div>
+  </div>
+
+
+</div>
+
+<footer class="bg-primary text-center">
+  <a class="text-white" target="_blank" rel="noopener" href="https://line.me/R/ti/p/%40fyp8311b">LINE</a>
+  <a class="text-white" target="_blank" rel="noopener" href="https://twitter.com/yoshito410kam">Twitter</a>
+  <a class="text-white" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCwrDvYey9uKGBeh_l5IF-ag">YouTube</a>
+  <a class="text-white d-none d-md-inline" target="_blank" rel="noopener" href="https://ja-jp.facebook.com/yoshito.kamizato">Facebook</a>
+</footer>
+
+
