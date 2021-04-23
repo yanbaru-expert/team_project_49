@@ -16,17 +16,21 @@ ActiveRecord::Schema.define(version: 2021_04_18_062749) do
   enable_extension "plpgsql"
 
   create_table "movies", force: :cascade do |t|
-    t.integer "genre"
-    t.string "title"
-    t.string "url"
+
+    t.integer "genre" default: 0, null: false
+    t.string "title" null: false
+    t.string "url" null: false
+
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "texts", force: :cascade do |t|
-    t.integer "genre"
-    t.string "title"
-    t.text "content"
+
+    t.integer "genre" default: 0, null: false
+    t.string "title" null: false
+    t.text "content" null: false
+
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
