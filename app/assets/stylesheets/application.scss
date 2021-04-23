@@ -3,8 +3,17 @@
  *= require_self
  */
 
-@import "bootstrap/scss/bootstrap";
+@import 'bootstrap/scss/bootstrap';
+
 /* 全体 */
+
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}
 
 .base-container {
   margin: 0 auto;
@@ -24,4 +33,3 @@
 .mw-xl {
   max-width: 1200px;
 }
-
