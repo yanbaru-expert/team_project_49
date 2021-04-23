@@ -15,3 +15,5 @@ end
 #   Character.create(name: 'Luke', movie: movies.first)
 Text.delete_all
 ImportCsv.text_data
+Movie.delete_all
+ImportCsv.movie_data
