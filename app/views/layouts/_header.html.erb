@@ -1,15 +1,14 @@
-<% if user_signed_in? %>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <a class="yanbaru-logo" href="/"><img width="240" src="https://d5izmuz0mcjzz.cloudfront.net/yanbaru_expert_logo.png" /></a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <a class="yanbaru-logo" href="/"><img width="240" src="https://d5izmuz0mcjzz.cloudfront.net/yanbaru_expert_logo.png" /></a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-        </button>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
 
-                <li class="nav-item active dropdown">
+            <li class="nav-item active dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Ruby
                 </a>
@@ -20,9 +19,9 @@
                     <a class="dropdown-item" href="/questions">よくある質問集</a>
                     <a class="dropdown-item" href="/challenges">チャレンジ問題集</a>
                 </div>
-                </li>
+            </li>
 
-                <li class="nav-item active dropdown">
+            <li class="nav-item active dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     PHP
                 </a>
@@ -30,9 +29,9 @@
                     <a class="dropdown-item" href="/texts?genre=php">PHPテキスト教材</a>
                     <a class="dropdown-item disabled" href="#">PHP動画教材</a>
                 </div>
-                </li>
+            </li>
 
-                <li class="nav-item active dropdown">
+            <li class="nav-item active dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     フロント
                 </a>
@@ -43,9 +42,9 @@
                     <a class="dropdown-item" href="/texts?genre=angular">Angular</a>
                     <a class="dropdown-item" href="/texts?genre=vue">Vue</a>
                 </div>
-                </li>
+            </li>
 
-                <li class="nav-item active dropdown">
+            <li class="nav-item active dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     デザイン講座
                 </a>
@@ -55,9 +54,9 @@
                     <a class="dropdown-item disabled" href="#">デザイナーのマーケティング戦略</a>
                     <a class="dropdown-item disabled" href="#">デザイン課題</a>
                 </div>
-                </li>
+            </li>
 
-                <li class="nav-item active dropdown">
+            <li class="nav-item active dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     勉強会
                 </a>
@@ -65,9 +64,9 @@
                     <a class="dropdown-item disabled" href="#">全ての勉強会</a>
                     <a class="dropdown-item disabled" href="#">プログラミング勉強会</a>
                 </div>
-                </li>
+            </li>
 
-                <li class="nav-item active dropdown">
+            <li class="nav-item active dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     マネタイズ講座
                 </a>
@@ -76,10 +75,12 @@
                     <a class="dropdown-item disabled" href="#">Lステップ講座</a>
                     <a class="dropdown-item disabled" href="#">インスタ講座</a>
                 </div>
-                </li>
+            </li>
 
-                <li class="nav-item active dropdown">
-                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<% if user_signed_in? %>
+
+            <li class="nav-item active dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     マイページ
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -88,100 +89,20 @@
                     <a class="dropdown-item" href="/users/edit">アカウント編集</a>
                     <a class="dropdown-item" rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a>
                 </div>
-                </li>
+            </li>
 
-            </ul>
-        </div>
-    </nav>
 <% else %>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <a class="yanbaru-logo" href="/"><img width="240" src="https://d5izmuz0mcjzz.cloudfront.net/yanbaru_expert_logo.png" /></a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
+            <li class="nav-item">
+                <a class="nav-item nav-link active" href="/users/sign_in">ログイン</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link active" href="/users/sign_up">新規登録</a>
+            </li>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-
-                <li class="nav-item active dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Ruby
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/texts">Ruby/Railsテキスト教材</a>
-                    <a class="dropdown-item disabled" href="#">Ruby/Rails動画教材</a>
-                    <a class="dropdown-item" href="/texts?genre=aws">AWSテキスト教材</a>
-                    <a class="dropdown-item" href="/questions">よくある質問集</a>
-                    <a class="dropdown-item" href="/challenges">チャレンジ問題集</a>
-                </div>
-                </li>
-
-                <li class="nav-item active dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    PHP
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/texts?genre=php">PHPテキスト教材</a>
-                    <a class="dropdown-item disabled" href="#">PHP動画教材</a>
-                </div>
-                </li>
-
-                <li class="nav-item active dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    フロント
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/texts?genre=html">HTML&amp;CSS</a>
-                    <a class="dropdown-item" href="/texts?genre=js">JavaScript</a>
-                    <a class="dropdown-item" href="/texts?genre=ts">TypeScript</a>
-                    <a class="dropdown-item" href="/texts?genre=angular">Angular</a>
-                    <a class="dropdown-item" href="/texts?genre=vue">Vue</a>
-                </div>
-                </li>
-
-                <li class="nav-item active dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    デザイン講座
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item disabled" href="#">デザインツールの使い方</a>
-                    <a class="dropdown-item disabled" href="#">実案件の取り方</a>
-                    <a class="dropdown-item disabled" href="#">デザイナーのマーケティング戦略</a>
-                    <a class="dropdown-item disabled" href="#">デザイン課題</a>
-                </div>
-                </li>
-
-                <li class="nav-item active dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    勉強会
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item disabled" href="#">全ての勉強会</a>
-                    <a class="dropdown-item disabled" href="#">プログラミング勉強会</a>
-                </div>
-                </li>
-
-                <li class="nav-item active dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    マネタイズ講座
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item disabled" href="#">マーケティング講座</a>
-                    <a class="dropdown-item disabled" href="#">Lステップ講座</a>
-                    <a class="dropdown-item disabled" href="#">インスタ講座</a>
-                </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-item nav-link active" href="/users/sign_in">ログイン</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-item nav-link active" href="/users/sign_up">新規登録</a>
-                </li>
-
-            </ul>
-        </div>
-    </nav>
 <% end %>
+
+        </ul>
+    </div>
+</nav>
 
