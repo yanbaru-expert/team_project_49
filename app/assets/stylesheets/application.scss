@@ -33,3 +33,14 @@
 .mw-xl {
   max-width: 1200px;
 }
+
+body {
+  padding-top: 56px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
