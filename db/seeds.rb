@@ -11,4 +11,13 @@ Text.delete_all
 ImportCsv.text_data
 Movie.delete_all
 ImportCsv.movie_data
-AdminUser.find_or_create_by!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+ADMIN_EMAIL = 'admin@example.com'
+ADMIN_PASSWORD = 'password'
+PASSWORD_CONFIRMATION = 'password'
+
+AdminUser.find_or_create_by!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') do |admin_user|
+  admin_user.password = ADMIN_PASSWORD
+  admin_user.password_confirmation = ADMIN_PASSWORD
+  puts 'ユーザーの初期データインポートに成功しました。'
+end
