@@ -10,4 +10,5 @@ end
 Text.delete_all
 ImportCsv.text_data
 Movie.delete_all
-ImportCsv.movie_dataAdminUser.find_or_create_by!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+ImportCsv.movie_data
+AdminUser.find_or_create_by!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
