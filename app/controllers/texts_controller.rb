@@ -1,6 +1,4 @@
 class TextsController < ApplicationController
-
-  
   def index
     if params[:genre].in?(genre: ["Basic", "Git", "Ruby", "Ruby on Rails"])
       @texts = Text.where(genre: params[:genre])
