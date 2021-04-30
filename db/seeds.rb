@@ -7,17 +7,15 @@ User.find_or_create_by!(email: EMAIL) do |user|
   puts 'ユーザーの初期データインポートに成功しました。'
 end
 
+ADMIN_EMAIL = 'admin@example.com'
+ADMIN_PASSWORD = 'password'
+
+AdminUser.find_or_create_by!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') do |admin_user|
+  admin_user.password = ADMIN_PASSWORD
+  puts 'ユーザーの初期データインポートに成功しました。'
+end
+
 Text.delete_all
 ImportCsv.text_data
 Movie.delete_all
 ImportCsv.movie_data
-
-ADMIN_EMAIL = 'admin@example.com'
-ADMIN_PASSWORD = 'password'
-PASSWORD_CONFIRMATION = 'password'
-
-AdminUser.find_or_create_by!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') do |admin_user|
-  admin_user.password = ADMIN_PASSWORD
-  admin_user.password_confirmation = ADMIN_PASSWORD
-  puts 'ユーザーの初期データインポートに成功しました。'
-end
