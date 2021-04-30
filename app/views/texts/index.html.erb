@@ -6,18 +6,7 @@
         </div>
     </div>
 
-
-    <% @texts.each do |text| %>
-        <div class="card-deck">
-            <div class="card my-4">
-                <img class="card-img-top" src="https://d5izmuz0mcjzz.cloudfront.net/texts/no_image.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text"><%= text.title %></p>
-                    <p class="card-text"><%= text.genre %></p>
-                </div>
-            </div>
-        </div>
-    <% end %>
+    <%= render "texts/collection" %>
 
 </div>
 
