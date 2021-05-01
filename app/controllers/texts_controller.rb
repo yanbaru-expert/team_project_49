@@ -1,7 +1,5 @@
 class TextsController < ApplicationController
   def index
-    @texts = Text.where(genre: ["Basic", "Git", "Ruby", "Ruby on Rails"])
+      @texts = Text.where(genre: ["basic", "git", "ruby", "rails"])
   end
 end
-
-
