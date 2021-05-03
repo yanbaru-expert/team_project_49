@@ -11,12 +11,13 @@ gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
-
+gem 'activeadmin'
 gem 'devise'
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
 gem 'enum_help'
 gem 'devise-bootstrap-views', '~> 1.0'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
