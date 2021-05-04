@@ -1,15 +1,11 @@
-<div class="row">
-    <% @texts.each do |text| %>
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card card-style">
-            <a class="text-decoration-none" target="_blank" href="/texts/<%= text.id %>">
-                <div class="card-body">
-                    <img class="card-img-top" src="https://d5izmuz0mcjzz.cloudfront.net/texts/no_image.jpg" alt="Card image cap">
-                    <p class="card-text"><%= text.title %></p>
-                    <p class="card-title">【<%= text.genre %>】</p>
-                </div>
-            </a>
-        </div>
-      </div>
-    <% end %>
+<div class="col-12 col-md-6 col-lg-4">
+    <div class="card card-style">
+        <a class="text-decoration-none" target="_blank" href="/texts/<%= text.id %>">
+            <div class="card-body">
+                <img class="card-img-top" src="https://d5izmuz0mcjzz.cloudfront.net/texts/no_image.jpg" alt="Card image cap">
+                <p class="card-text"><%= text.title %></p>
+                <p class="card-title">【<%= text.genre %>】</p>
+            </div>
+        </a>
+    </div>
 </div>
