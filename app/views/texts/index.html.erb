@@ -1,11 +1,12 @@
 <div class="container">
     <div class="row">
-        <div class="col-4 text-center offset-4">
-            <h2 class="text-title mt-5">Ruby/Rails テキスト教材</h2>
+        <div class="text_top_menu">
+            <h3 class="text-title mt-5">Ruby/Rails テキスト教材</h2>
             <input type="text"class='form-control' placeholder="教材を探す">
         </div>
     </div>
 </div>
-
-
-
+    <div class="row">
+      <%= render @texts %>
+    </div>
+</div>
