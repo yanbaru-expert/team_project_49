@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+
   <a class="yanbaru-logo d-flex" href="/"><img width="240" src="https://d5izmuz0mcjzz.cloudfront.net/yanbaru_expert_logo.png" /></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,7 +12,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <%= link_to "Ruby/Railsテキスト教材", texts_path, class: "dropdown-item" %>
-          <a class="dropdown-item disabled" href="#">Ruby/Rails動画教材</a>
+          <a class="dropdown-item" href="/movies">Ruby/Rails動画教材</a>
           <a class="dropdown-item" href="/texts?genre=aws">AWSテキスト教材</a>
           <a class="dropdown-item" href="/questions">よくある質問集</a>
           <a class="dropdown-item" href="/challenges">チャレンジ問題集</a>
@@ -23,7 +24,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/texts?genre=php">PHPテキスト教材</a>
-          <a class="dropdown-item disabled" href="#">PHP動画教材</a>
+          <a class="dropdown-item" href="/movies">PHP動画教材</a>
         </div>
       </li>
       <li class="nav-item active dropdown">
